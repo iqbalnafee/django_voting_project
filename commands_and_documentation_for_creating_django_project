@@ -4,7 +4,7 @@
 4. django-admin startproject pollster // to create project named pollster
 5. //sqlite is default db for pyhton . we can change db from settings.py file 
 7. //pollster is our whole website. Every website constitute with some apps like blogs,posts,profiles etc. Django bu default create some apps like admin,auth,session etc. In this project we will make some apps
-8. After step 4, run cd pollster
+8. After step 4, run this command: cd pollster
 9. python manage.py runserver 8001 // to run the server  at port 8001
 10. python manage.py migrate // to migrate default app's tables
 11. python manage.py startapp polls // to create our first app polls
@@ -22,5 +22,16 @@ To do this we need to first define our app in settings.py in INSTALLED_APPS = ['
     14.a) from polls.models import Question,choice // to bring the models
     14.b) Question.objects.all() // to get whole question table
     14.c) from django.utils import timezone // to assign tome zone to pub_date
+    14.d) q = Question(question_text="What is your favourite python framework?",pub_date=timezone.now()) //the insert query of question
+    14.e) q.save() // to inset in the db
+    14.f) q.id /*to get the id*/ q.question_text //to get the question
+    14.g) Question.objects.get(pk=1) // same as where id=1
+    14.h) Question.objects.filter(1) // same as (14.g) but it returns a list
 
-     git reset --hard HEAD~2
+    14.i) q = Question.objects.get(pk=1)
+    14.j) q.choice_set.all()
+    14.k) q.choice_set.create(choice_text='Django', votes=0) //to set choice for this corresponding question
+    14.l) q.choice_set.create(choice_text='Flask', votes=0)
+    14.m) q.choice_set.create(choice_text='Flask', votes=0)
+    14.n) q.choice_set.all()
+    14.o) quit()
