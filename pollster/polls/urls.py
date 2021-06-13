@@ -9,5 +9,16 @@ urlpatterns = [
 
     # 1st param empty quotes means /polls,2nd param connect it to the view which is index view where views.index is our index function in views.py
     path('', views.index, name='index'),
-    path('result', views.index, name='index')  # means /polls/result
+
+    # path('results', views.detail, name='detail'),  # means /polls/result
+
+    # means /polls/1 where 1 is question id
+    # here name is url_name or pattern name
+    path('<int:question_id>', views.detail, name='detail'),
+
+
+    # means /polls/1/results where 1 is question id
+    path('<int:question_id>/results', views.results, name='results'),
+
+    path('<int:question_id>/results', views.results, name='blogs')
 ]

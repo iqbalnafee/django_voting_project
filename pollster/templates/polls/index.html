@@ -15,15 +15,31 @@
 
             {% for question in latest_question_list %}
 
-                <div class="card mb-3">
+                <div class="card mb-3 mt-3">
 
                     <!-- mb-3 neans margin-bottom 3 -->
 
-                    <div class="card-body">
+                    <div class="card-body mt-5">
 
                         <p class="lead">
 
                             {{  question.question_text  }} <!--to echo output-->
+
+                            <!--links to vote page and show result page-->
+                            <br/>
+                            <a href="{% url 'polls:detail' question.id %}" class="btn btn-primary btn-sm mt-3">Votes Now</a> <!--polls:detail question.id same as polls/question.id-->
+                            <!--It will be same as <a href="/polls/{{question.id}}"> -->
+                            <!--Here 'polls' is the namespace what we define in urls.py '-->
+                            <!--'detail' is the url_name or pattern name-->
+                            <!--in urls.py path('<int:question_id>', views.detail, name='detail'). here detail is the url_name or pattern name-->
+
+
+
+                            <a href="{% url 'polls:results' question.id %}" class="btn btn-success btn-sm mt-3">Results</a>
+
+                            <!-- <a href="{% url 'polls:blogs' question.id %}" class="btn btn-danger btn-sm">Blogs</a> -->
+
+                            
 
                         </p>
 
