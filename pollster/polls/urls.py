@@ -14,11 +14,14 @@ urlpatterns = [
 
     # means /polls/1 where 1 is question id
     # here name is url_name or pattern name
-    path('<int:question_id>', views.detail, name='detail'),
+    #path('<int:question_id>', views.detail, name='detail'),
+    path('<int:question_id>/', views.detail, name='detail'),
 
 
     # means /polls/1/results where 1 is question id
     path('<int:question_id>/results', views.results, name='results'),
 
-    path('<int:question_id>/results', views.results, name='blogs')
+    path('<int:question_id>/results', views.results, name='blogs'),
+
+    path('<int:question_id>/vote/', views.vote, name='vote')
 ]
