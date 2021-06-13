@@ -1,14 +1,26 @@
 1. pip install pipenv //only for first time to install pipenv
+
 2. pipenv shell //create a virtual environment
+
 3. pipenv install django // to install django not globally but only only for this project
+
 4. django-admin startproject pollster // to create project named pollster
+
 5. //sqlite is default db for pyhton . we can change db from settings.py file 
-7. //pollster is our whole website. Every website constitute with some apps like blogs,posts,profiles etc. Django bu default create some apps like admin,auth,session etc. In this project we will make some apps
+
+7. //pollster is our whole website. Every website constitute with some apps like blogs,posts,profiles etc. 
+Django bu default create some apps like admin,auth,session etc. In this project we will make some apps
+
 8. After step 4, run this command: cd pollster
+
 9. python manage.py runserver 8001 // to run the server  at port 8001
+
 10. python manage.py migrate // to migrate default app's tables
+
 11. python manage.py startapp polls // to create our first app polls
+
 12. //Whenever we create a app it comes with app folder including migration folder in it
+
 13. //After creating models in our appName/models.py we need to create a migration which will create database table. We will do it in settings.py 
 
 To do this we need to first define our app in settings.py in INSTALLED_APPS = ['appName.apps.first config class name in apps.py in app folder'] array
@@ -35,3 +47,15 @@ To do this we need to first define our app in settings.py in INSTALLED_APPS = ['
     14.m) q.choice_set.create(choice_text='Flask', votes=0)
     14.n) q.choice_set.all()
     14.o) quit()
+
+15. python manage.py createsuperuser //to set up our admin area
+
+16.// In your app folder you will find admin.py. Register your models in this file. Go to the admin page to view the changes
+
+17. // To view choices under question in admin panel we will do the following things in admin.py 
+
+18. // To get the views edit views.py
+
+19. // create a urls.py in our app folder file to handle requests
+
+20. // To call global templates folder's templates we need to change settings.py TEMPLATES variable's object's DIRS[]
