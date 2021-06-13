@@ -21,5 +21,6 @@ from django.urls import include  # if we want to include another urls.py
 urlpatterns = [
     # if any url comes with /polls, it will go polls folder's urls.py
     path('polls/', include('polls.urls')),
+    path('', include('pages.urls')),
     path('admin/', admin.site.urls),
 ]
