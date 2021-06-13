@@ -2,6 +2,10 @@ from django.contrib import admin
 
 from .models import Question, choice
 
+admin.site.site_header = "Pollster Admin"
+admin.site.site_title = "Pollster Admin Area"  # browser tab site_title
+admin.site.index_title = "Welcome to the Pollster admin area"
+
 # To show choices below Questions in admin side
 
 
