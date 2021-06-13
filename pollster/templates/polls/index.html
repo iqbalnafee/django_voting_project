@@ -1,7 +1,44 @@
 {% extends "base.html" %}
 
+<!--Below are python codes-->
+
 {% block content %} 
 
-    POLLS
+    <h1 class="text-center mb-3">
+
+        Poll Questions
+
+        
+        {% if latest_question_list %}
+
+            <!--if poll question found we will looping through the questions-->
+
+            {% for question in latest_question_list %}
+
+                <div class="card mb-3">
+
+                    <!-- mb-3 neans margin-bottom 3 -->
+
+                    <div class="card-body">
+
+                        <p class="lead">
+
+                            {{  question.question_text  }} <!--to echo output-->
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>No polls available</p>
+
+        {% endif %}
+
+    </h1>
 
 {% endblock %}

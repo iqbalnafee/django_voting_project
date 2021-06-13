@@ -59,3 +59,9 @@ To do this we need to first define our app in settings.py in INSTALLED_APPS = ['
 19. // create a urls.py in our app folder file to handle requests
 
 20. // To call global templates folder's templates we need to change settings.py TEMPLATES variable's object's DIRS[]
+
+21. // created base.html in global templates folder for bootstra and other css
+
+22. // we nedd to extend this base.html in our html files
+
+23. // Now we need to send our data to the views. Check views.py
