@@ -11,5 +11,5 @@
 </ul>
 
 <a class="btn btn-secondary" href="{% url 'polls:index' %}">Back To Polls</a>
-<a class="btn btn-dark" href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<a style="color:black;background-color: yellow;border-color: blue;" class="btn btn-danger" href="{% url 'polls:detail' question.id %}" >Vote again?</a>
 {% endblock %}
