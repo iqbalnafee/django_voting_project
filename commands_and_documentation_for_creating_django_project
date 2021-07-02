@@ -2,7 +2,7 @@
 
 2. pipenv shell //create a virtual environment
 
-3. pipenv install django // to install django not globally but only only for this project
+3. pipenv install django djangorestframework // to install django with djangorestframework not globally but only only for this project
 
 4. django-admin startproject pollster // to create project named pollster
 
